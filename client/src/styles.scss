@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.toolbar-spacer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+a.title {
+  color: white;
+  text-decoration: none;
+}
