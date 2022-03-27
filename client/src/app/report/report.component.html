@@ -1,0 +1,27 @@
+<div class="report-container">
+  <div class="inner-container">
+    <button mat-raised-button color="primary" (click)="getReport()">
+      Get Report (Admin Only)
+    </button>
+    <button mat-raised-button color="secondary" (click)="getReportStatus()">
+      Get Report Status
+    </button>
+  </div>
+</div>
+<div class="report-status">
+  {{ reportStatus }}
+</div>
+<div *ngIf="pdfUrl" class="report-status">
+  <mat-card>
+    <mat-card-content>
+      <object
+        [data]="pdfUrl"
+        type="application/pdf"
+        style="min-height: 100vw; width: 100%"
+      ></object>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="!isAccessible" class="error-status">
+  {{ nonAccessibleMessage }}
+</div>

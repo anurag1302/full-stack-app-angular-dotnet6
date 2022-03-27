@@ -3,6 +3,7 @@
   <h3 style="margin-left: 450px">Welcome to Admin App</h3>
   <div class="toolbar-spacer">
     <a mat-button [routerLink]="['profile']">Profile</a>
+    <a mat-button [routerLink]="['report']">Reports</a>
     <button mat-raised-button *ngIf="!isLoggedIn" (click)="login()">
       Login
     </button>

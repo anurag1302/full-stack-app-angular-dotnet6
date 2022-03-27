@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -20,9 +20,15 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AzureConnectionService } from './azure-connection.service';
 import { environment } from 'src/environments/environment';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProfileComponent,
+    ReportComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +37,7 @@ import { environment } from 'src/environments/environment';
     MatCardModule,
     MatListModule,
     MatDividerModule,
+    HttpClientModule,
     MsalModule.forRoot(
       new PublicClientApplication({
         auth: {
@@ -51,7 +58,9 @@ import { environment } from 'src/environments/environment';
       },
       {
         interactionType: InteractionType.Redirect,
-        protectedResourceMap: new Map([]),
+        protectedResourceMap: new Map([
+          ['localhost', [environment.ReportsApiScope]],
+        ]),
       }
     ),
   ],

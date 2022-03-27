@@ -1,0 +1,25 @@
+.report-container {
+  width: 50%;
+  background-color: chocolate;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.report-status {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  background-color: aquamarine;
+}
+.error-status {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  background-color: red;
+}
